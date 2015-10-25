@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/chronos/Projectos'
+let g:netrw_dirhist_2='/home/chronos/Projectos/theroomservice'
+let g:netrw_dirhist_3='/home/chronos/Projectos/theroomservice/salesid'
+let g:netrw_dirhist_4='/home/chronos/Projectos/theroomservice/salesid/store'
+let g:netrw_dirhist_5='/home/chronos/Projectos/theroomservice/salesid/store/src'
+let g:netrw_dirhist_6='/home/chronos/Projectos/theroomservice/salesid/store'
+let g:netrw_dirhist_7='/home/chronos/Projectos/theroomservice/salesid/store/pag'
