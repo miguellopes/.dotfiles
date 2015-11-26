@@ -201,20 +201,20 @@ function whoisthis () {
 }
 
 function zonetransfer () {
-   dnsrecon.py -d $1 -t axfr
+   dnsrecon -d $1 -t axfr
 }
 
 function ilookup () {
    if  valid_ip $1;
    then
-       __IP=`dig +short $1`
+       __IP=`dig +short $1 | head -n 1`
    else
        __IP=$1
    fi
       echo $__IP
       whoisthis $__IP
-      echo #-n
-      tdsips $__IP #| more -n 15
+      echo .
+      tdsips $__IP 
 
 }
 
