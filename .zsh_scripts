@@ -213,7 +213,7 @@ function ilookup () {
    fi
       echo $__IP
       whoisthis $__IP
-      echo -n
+      echo #-n
       tdsips $__IP #| more -n 15
 
 }
