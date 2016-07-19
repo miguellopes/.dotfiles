@@ -1,0 +1,4 @@
+color_scheme 1
+time-format %H:%M:%S
+date-format %Y-%m-%d
+log-format %^: "%dT%t+%^", %^: "%h", %^:%^: "%b", %^: "%T", %^: "%s", %^:%^: "%v", %^:%^:%^: "%r", %^:%^: "%R", %^:%^:%^:%^%^:%^: "%u"

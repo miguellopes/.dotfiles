@@ -1,0 +1,41 @@
+#!/bin/sh
+
+if [ "$EUID" -ne "0" ]
+   then echo "r00t?"
+   exit  
+fi
+if [ "$1" == "bat" ]; then
+   #usb
+   for i in $(ls /sys/bus/usb/devices/*/power/level);do echo auto > $i;done
+   for i in /sys/bus/usb/devices/*/power/autosuspend; do echo 1 > $i; done
+   #cpu
+   echo "powersave" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+   echo "powersave" > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
+   echo "powersave" > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
+   echo "powersave" > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
+   echo "powersave" > /sys/module/pcie_aspm/parameters/policy
+   #som
+   echo 10 > /sys/module/snd_hda_intel/parameters/power_save
+   #webcam
+   modprobe -r uvcvideo
+   #bluetooth
+   modprobe -r btusb
+	modprobe -r bluetooth
+   echo "Modo Bat Ativado"
+else
+   echo "ondemand" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+   echo "ondemand" > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
+   echo "ondemand" > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
+   echo "ondemand" > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
+   echo "performance" > /sys/module/pcie_aspm/parameters/policy
+   #som
+   echo 0 > /sys/module/snd_hda_intel/parameters/power_save
+   #webcam
+   modprobe uvcvideo
+   #bluetooth
+   modprobe btusb
+	modprobe bluetooth
+   echo "Modo Corrente"
+fi
+
+
