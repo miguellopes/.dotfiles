@@ -11,10 +11,10 @@ then
    ls zsh/.oh-my-zsh/oh-my-zsh.sh > /dev/null 2>&1
    if [ "$?" != "0" ]; then
       echo "A atualizar submodulos."
-      git submodule init zsh/.oh-my-zsh/
-      git submodule update zsh/.oh-my-zsh/
+      git submodule init 
+      git submodule update
    fi
-	find . -maxdepth 2 -name ".*" ! -name '.git*' ! -name '.' ! -name '..' -exec ln -s -f $PWD/{} --target-directory=$HOME \;
+	find . -maxdepth 2 -name ".*" ! -name '.git*' ! -name '.' ! -name '..' -exec ln -s -f $PWD/{} $HOME/ \;
 else
    rsync -avzr $PWD/.git $1:~/.dotfiles/
    rsync -avzr $PWD/$0 $1:~/.dotfiles/

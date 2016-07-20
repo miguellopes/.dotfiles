@@ -1,4 +1,25 @@
 [submodule ".oh-my-zsh"]
       path = zsh/.oh-my-zsh
       url = git://github.com/robbyrussell/oh-my-zsh.git
+[submodule "minibufexpl.vim"]
+      path = vim/.vim/bundle/minibufexpl.vim
+      url = https://github.com/fholgado/minibufexpl.vim.git
+[submodule "puppet"]
+      path = vim/.vim/bundle/puppet
+      url = https://github.com/rodjek/vim-puppet.git
+[submodule "supertab"]
+      path = vim/.vim/bundle/supertab
+      url = https://github.com/ervandew/supertab
+[submodule "syntastic"]
+      path = vim/.vim/bundle/syntastic
+      url = https://github.com/scrooloose/syntastic.git
+[submodule "vim-colors-solarized"]
+      path = vim/.vim/bundle/vim-colors-solarized
+      url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "vim-dispatch"]
+      path = vim/.vim/bundle/vim-dispatch
+      url = git://github.com/tpope/vim-dispatch.git
+[submodule "vim-fugitive"]
+      path = vim/.vim/bundle/vim-fugitive
+      url = https://github.com/tpope/vim-fugitive
 
