@@ -6,7 +6,7 @@ then
    ls README.md > /dev/null 2>&1
    if [ "$?" != "0" ]; then
       echo "A extrair repositorio."
-      git checkout .
+      git clone https://github.com/miguellopes/.dotfiles.git .
    fi
    ls zsh/.oh-my-zsh/oh-my-zsh.sh > /dev/null 2>&1
    if [ "$?" != "0" ]; then
@@ -16,7 +16,6 @@ then
    fi
 	find . -maxdepth 2 -name ".*" ! -name '.git*' ! -name '.' ! -name '..' -exec ln -s -f $PWD/{} $HOME/ \;
 else
-   rsync -avzr $PWD/.git $1:~/.dotfiles/
-   rsync -avzr $PWD/$0 $1:~/.dotfiles/
+   ssh $1 "git clone https://github.com/miguellopes/.dotfiles.git"
 fi
 
