@@ -26,3 +26,6 @@
       path = vim/.vim/bundle/vim-arduino-syntax
       url = https://github.com/sudar/vim-arduino-syntax.git
 
+[submodule "vim/.vim/bundle/vim-arduino-syntax"]
+	path = vim/.vim/bundle/vim-arduino-syntax
+	url = https://github.com/sudar/vim-arduino-syntax.git
