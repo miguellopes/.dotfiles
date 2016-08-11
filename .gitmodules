@@ -9,7 +9,7 @@
       url = https://github.com/rodjek/vim-puppet.git
 [submodule "supertab"]
       path = vim/.vim/bundle/supertab
-      url = https://github.com/ervandew/supertab
+      url = https://github.com/ervandew/supertab.git
 [submodule "syntastic"]
       path = vim/.vim/bundle/syntastic
       url = https://github.com/scrooloose/syntastic.git
@@ -21,5 +21,8 @@
       url = git://github.com/tpope/vim-dispatch.git
 [submodule "vim-fugitive"]
       path = vim/.vim/bundle/vim-fugitive
-      url = https://github.com/tpope/vim-fugitive
+      url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim-arduino-syntax"]
+      path = vim/.vim/bundle/vim-arduino-syntax
+      url = https://github.com/sudar/vim-arduino-syntax.git
 
