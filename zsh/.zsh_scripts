@@ -338,3 +338,42 @@ function masstitulo() {
 function badpanda () {
    for ((i=0;i<600;i++)); do echo "key=$i"| nc $1 8082; done > /dev/null 2>&1 
 }
+function dns-brute () {
+   if [ ! -d "./dns" ]; then
+      mkdir dns
+   fi
+   dnsenum -o dns/$1.xml --threads 10 -f ~/wordlists/subdominios/FINAL.wl $1
+}
+function basic-http () {
+   cwd=`pwd`
+   if [ ! -d "./nikto" ]; then
+      mkdir nikto
+   fi
+   case "$1" in
+      ssl)
+         nikto -h https://$2/ -output $cwd/nikto/$2.txt -F txt
+         ;;
+      man)
+         nikto -h $2 -output $cwd/nikto/$2.txt -F txt
+         ;;
+      *)
+         nikto -h http://$1/ -output $cwd/nikto/$1.txt -F txt
+         ;;
+   esac
+}
+function nmap-this () {
+   if [ ! -d "./scans" ]; then
+      mkdir scans
+   fi
+   case "$1" in
+      tcp4)
+         sudo nmap -sSV -p- -n -Pn -vv -oA scans/local_findmore -T4 $2
+         ;;
+      tcp3)
+         sudo nmap -sSV -p- -n -Pn -vv -oA scans/local_findmore -T3 $2
+         ;;
+      tcpl)
+         sudo nmap -sSV -p- -n -Pn -vv -oA scans/local_findmore -T4 -iL $2
+         ;;
+   esac
+}
