@@ -118,9 +118,9 @@ function massrdns () {
 
    if [ -z "$2" ]
    then
-      cat $1 | parallel -j300 -k --progress dig +short -x {} >> $1.rdns
+      cat $1 | parallel -j300 -k --progress dig +noall +answer -x {} >> $1.rdns
    else
-      cat $1 | parallel -j300 -k --progress dig @$2 +short -x {} >> $1.rdns
+      cat $1 | parallel -j300 -k --progress dig @$2 +noall +answer -x {} >> $1.rdns
 
    fi
 }
@@ -155,7 +155,7 @@ function massvh2() {
    local PD=`pwd`
    for i in `cat $1`
    do
-      theHarvester -l 1500 -b bing -v -f "$PD/vhosts/$i.html" -d $i &
+      theharvester -l 1500 -b bing -v -f "$PD/vhosts/$i.html" -d $i &
       sleep 5
    done
 }
@@ -164,7 +164,7 @@ function massvh() {
    mkdir -p vhosts
    for i in `ls -1 $1 | sed -e 's/\.axfr//'`
    do
-      theHarvester -l 1500 -b bing -v -f "./vhosts/$i" -d $i &
+      theharvester -l 1500 -b bing -v -f "./vhosts/$i" -d $i &
       sleep 7
    done
 }
@@ -201,7 +201,7 @@ function whoisthis () {
 }
 
 function zonetransfer () {
-   dnsrecon -d $1 -t axfr
+   dnsrecon.py -d $1 -t axfr
 }
 
 function ilookup () {
