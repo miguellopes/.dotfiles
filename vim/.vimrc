@@ -434,8 +434,14 @@ nnoremap <leader>2 Vy$p
 
 imap º /
 
-inoremap { {<CR><BS>}<Esc>i
-inoremap ( ()<Esc>i
+"inoremap { {<CR><BS>}<Esc>i
+"inoremap ( ()<Esc>i
+"ino " ""<left>
+"ino ' ''<left>
+"ino ( ()<left>
+"ino [ []<left>
+"ino { {}<left>
+"ino {<CR> {<CR>}<ESC>O
 
 
 set cursorline
@@ -461,6 +467,7 @@ endfunction
 function! GetName()
   return expand("%:t")==''?'<none>':expand("%:t")
 endfunction
+
 
 set statusline=%1*\[%{GetName()}\]%3*
 set statusline+=%7*%{&modified?'\[mod]':'\ '}%3*
