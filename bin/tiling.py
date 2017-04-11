@@ -6,7 +6,8 @@
 from gtk.gdk import *
 import argparse
 
-TITLE_BAR = 22  # Put the height of your title bar here
+TOP_BAR = 22  # Put the height of your title bar here
+TITLE_BAR = 24  # Put the height of your title bar here
 
 # Parse the command line arguments
 
@@ -30,14 +31,14 @@ state = win.property_get('_NET_WM_STATE')[2]
 # Get the screen's width and height
 
 screen_width = screen_width()
-screen_height = screen_height()
+screen_height = screen_height()-TOP_BAR
 
 # Calculate the frame dimensions and location in pixels
 
 w = int(round(args.w / 100.0 * screen_width))
 h = int(round(args.h / 100.0 * screen_height))
 x = int(round(args.x / 100.0 * screen_width))
-y = int(round(args.y / 100.0 * screen_height))
+y = int(round(args.y / 100.0 * screen_height))+TOP_BAR
 
 # Check whether decorations are desired
 
