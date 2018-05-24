@@ -20,11 +20,11 @@ function theme_precmd {
 
     if [[ "$promptsize + $pwdsize + gitpromptsize" -gt "($TERMWIDTH / 2) + 5" ]]; then
       #((PR_PWDLEN=$TERMWIDTH - $promptsize))
-      PROMPT='[%(!.%{$fg[red]%}.%{$fg[white]%}%n@)%{$fg[red]%}%m%{$reset_color%}:%{$fg[yellow]%}%(!.%1~.%~) $(git_prompt_info)%{$reset_color%}]
+      PROMPT='%(!.%{$fg[red]%}.%{$fg[white]%}%n@)%{$fg[red]%}%m%{$reset_color%}:%{$fg[yellow]%}%(!.%1~.%~) $(git_prompt_info)%{$reset_color%}
 $(prompt_char)%{$reset_color%} '
     else
       #PR_FILLBAR="\${(l.(($TERMWIDTH - ($promptsize + $rubypromptsize + $pwdsize)))..${PR_HBAR}.)}"
-      PROMPT='[%(!.%{$fg[red]%}.%{$fg[white]%}%n@)%{$fg[red]%}%m%{$reset_color%}:%{$fg[yellow]%}%(!.%1~.%~) $(git_prompt_info)%{$reset_color%}] $(prompt_char)%{$reset_color%} '
+      PROMPT='%(!.%{$fg[red]%}.%{$fg[white]%}%n@)%{$fg[red]%}%m%{$reset_color%}:%{$fg[yellow]%}%(!.%1~.%~) $(git_prompt_info)%{$reset_color%}$(prompt_char)%{$reset_color%} '
     fi
 
 }

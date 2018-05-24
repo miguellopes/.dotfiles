@@ -16,6 +16,7 @@ alias "testdns"="dig +short which.opendns.com txt @208.67.220.220"
 alias "glog"='git log -10 --graph --date-order -C -M --pretty=format:"%C(yellow)%h%C(reset) - %C(bold green)%ad%C(reset) - %C(dim yellow)%an%C(reset) %C(bold red)>%C(reset) %C(white)%s%C(reset) %C(bold red)%d%C(reset) " --abbrev-commit --date=short'
 alias "powersave"="sudo sh ~/.dotfiles/bin/powersave"
 alias vms="sudo lxc-ls --fancy | column -t"
+alias iptv="mpv --script-opts=iptv=1"
 
 #teclas
 bindkey -v
