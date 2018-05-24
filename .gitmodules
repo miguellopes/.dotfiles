@@ -1,9 +1,6 @@
 [submodule ".oh-my-zsh"]
       path = zsh/.oh-my-zsh
       url = git://github.com/robbyrussell/oh-my-zsh.git
-[submodule "minibufexpl.vim"]
-      path = vim/.vim/bundle/minibufexpl.vim
-      url = https://github.com/fholgado/minibufexpl.vim.git
 [submodule "puppet"]
       path = vim/.vim/bundle/puppet
       url = https://github.com/rodjek/vim-puppet.git
@@ -29,3 +26,6 @@
 [submodule "vim/.vim/bundle/vim-arduino-syntax"]
 	path = vim/.vim/bundle/vim-arduino-syntax
 	url = https://github.com/sudar/vim-arduino-syntax.git
+[submodule "vim/.vim/bundle/vim-buftabline"]
+	path = vim/.vim/bundle/vim-buftabline
+	url = https://github.com/ap/vim-buftabline.git
