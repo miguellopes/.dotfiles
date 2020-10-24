@@ -6,7 +6,7 @@ ZSH_THEME="overblue"
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/sbin:/opt/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/sbin:/opt/bin:~/.config/composer/vendor/bin"
 
 plugins=(git encode64 urltools tmux git-flow)
 
@@ -25,6 +25,7 @@ export ARCHFLAGS="-arch x86_64"
 if [ -f $HOME/.zsh_local ]; then
    source $HOME/.zsh_local
 fi
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 
 
 

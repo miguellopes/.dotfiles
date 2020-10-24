@@ -434,6 +434,11 @@ nnoremap <leader>2 Vy$p
 
 imap º /
 
+"NAVEGACAO"
+nnoremap <C-k> :tabnext<cr>
+nnoremap <C-j> :tabprev<cr>
+nnoremap <C-a> :tabnew<cr>:Explore<cr>
+
 "inoremap { {<CR><BS>}<Esc>i
 "inoremap ( ()<Esc>i
 "ino " ""<left>

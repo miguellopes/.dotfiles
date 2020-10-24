@@ -1,9 +1,6 @@
 [submodule ".oh-my-zsh"]
       path = zsh/.oh-my-zsh
       url = git://github.com/robbyrussell/oh-my-zsh.git
-[submodule "puppet"]
-      path = vim/.vim/bundle/puppet
-      url = https://github.com/rodjek/vim-puppet.git
 [submodule "supertab"]
       path = vim/.vim/bundle/supertab
       url = https://github.com/ervandew/supertab.git
